@@ -1,7 +1,10 @@
 import {Component} from 'react'
 import Popup from 'reactjs-popup'
 import {RiCloseLine} from 'react-icons/ri'
+import {Paragraph} from './styledComponent'
+
 import 'reactjs-popup/dist/index.css'
+
 import './index.css'
 
 class RockPaperScissors extends Component {
@@ -119,8 +122,8 @@ class RockPaperScissors extends Component {
             <p>SCISSORS</p>
           </div>
           <div className="score col-3 d-flex flex-row justify-content-center align-items-center">
-            <p className="mr-1 score">Score</p>
-            <p className="score">{score}</p>
+            <Paragraph className="mr-1 score">Score</Paragraph>
+            <Paragraph className="score">{score}</Paragraph>
           </div>
         </div>
         <div className="rps-play-container col-9">
@@ -129,7 +132,8 @@ class RockPaperScissors extends Component {
             <div className="d-flex flex-column">
               <div className="d-flex flex-row justify-content-center col-12">
                 <button
-                  testid="rockButton"
+                  type="button"
+                  data-testid="rockButton"
                   onClick={this.imageClicked}
                   className="col-4"
                 >
@@ -141,7 +145,8 @@ class RockPaperScissors extends Component {
                   />
                 </button>
                 <button
-                  testid="scissorsButton"
+                  type="button"
+                  data-testid="scissorsButton"
                   onClick={this.imageClicked}
                   className="col-4"
                 >
@@ -155,7 +160,8 @@ class RockPaperScissors extends Component {
               </div>
               <div className="d-flex flex-column align-items-center col-12">
                 <button
-                  testid="paperButton"
+                  type="button"
+                  data-testid="paperButton"
                   onClick={this.imageClicked}
                   className="col-4"
                 >
@@ -171,7 +177,7 @@ class RockPaperScissors extends Component {
           )}
           {result && (
             <div>
-              {/* <h1>result</h1> */}
+              <h1>Rock Paper Scissors</h1>
               <div className="d-flex flex-row">
                 <div className="d-flex flex-column align-items-center">
                   <h1>YOU</h1>
@@ -194,8 +200,12 @@ class RockPaperScissors extends Component {
                 
               </div> */}
               <div className="d-flex flex-column align-items-center">
-                <h1>{resultText}</h1>
-                <button className="play-again" onClick={this.PlayAgain}>
+                <p>{resultText}</p>
+                <button
+                  type="button"
+                  className="play-again"
+                  onClick={this.PlayAgain}
+                >
                   PLAY AGAIN
                 </button>
               </div>
