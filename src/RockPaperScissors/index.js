@@ -1,7 +1,7 @@
 import {Component} from 'react'
 import Popup from 'reactjs-popup'
 import {RiCloseLine} from 'react-icons/ri'
-import {Paragraph} from './styledComponent'
+import {Paragraph, Button, Image, Heading} from './styledComponent'
 
 import 'reactjs-popup/dist/index.css'
 
@@ -116,7 +116,7 @@ class RockPaperScissors extends Component {
       <div className="bg-home col-12">
         <div className="col-9 rpc-score-container m-1">
           <div>
-            <h1>Rock Paper Scissors</h1>
+            <Heading>Rock Paper Scissors</Heading>
             <p>ROCK</p>
             <p>PAPER</p>
             <p>SCISSORS</p>
@@ -131,47 +131,47 @@ class RockPaperScissors extends Component {
           {!result && (
             <div className="d-flex flex-column">
               <div className="d-flex flex-row justify-content-center col-12">
-                <button
+                <Button
                   type="button"
                   data-testid="rockButton"
                   onClick={this.imageClicked}
                   className="col-4"
                 >
-                  <img
+                  <Image
                     id={choiceList[0].id}
                     alt={choiceList[0].id}
                     className="rps-image col-8"
                     src={choiceList[0].imageUrl}
                   />
-                </button>
-                <button
+                </Button>
+                <Button
                   type="button"
                   data-testid="scissorsButton"
                   onClick={this.imageClicked}
                   className="col-4"
                 >
-                  <img
+                  <Image
                     id={choiceList[1].id}
                     alt={choiceList[1].id}
                     className="rps-image col-8"
                     src={choiceList[1].imageUrl}
                   />
-                </button>
+                </Button>
               </div>
               <div className="d-flex flex-column align-items-center col-12">
-                <button
+                <Button
                   type="button"
                   data-testid="paperButton"
                   onClick={this.imageClicked}
                   className="col-4"
                 >
-                  <img
+                  <Image
                     id={choiceList[2].id}
                     alt={choiceList[2].id}
                     className="rps-image col-8"
                     src={choiceList[2].imageUrl}
                   />
-                </button>
+                </Button>
               </div>
             </div>
           )}
@@ -181,7 +181,7 @@ class RockPaperScissors extends Component {
               <div className="d-flex flex-row">
                 <div className="d-flex flex-column align-items-center">
                   <h1>YOU</h1>
-                  <img
+                  <Image
                     alt="your choice"
                     className="result-images"
                     src={resultArr[0].imageUrl}
@@ -189,7 +189,7 @@ class RockPaperScissors extends Component {
                 </div>
                 <div className="d-flex flex-column align-items-center">
                   <h1>OPPONENT</h1>
-                  <img
+                  <Image
                     alt="opponent choice"
                     className="result-images"
                     src={resultArr[1].imageUrl}
@@ -201,13 +201,13 @@ class RockPaperScissors extends Component {
               </div> */}
               <div className="d-flex flex-column align-items-center">
                 <p>{resultText}</p>
-                <button
+                <Button
                   type="button"
                   className="play-again"
                   onClick={this.PlayAgain}
                 >
                   PLAY AGAIN
-                </button>
+                </Button>
               </div>
             </div>
           )}
@@ -217,21 +217,21 @@ class RockPaperScissors extends Component {
           <Popup
             modal
             trigger={
-              <button type="button" className="rules">
+              <Button type="button" className="rules">
                 Rules
-              </button>
+              </Button>
             }
           >
             {close => (
               <>
                 <div className="col-9">
-                  <button
+                  <Button
                     type="button"
                     className="trigger-button align-self-end"
                     onClick={() => close()}
                   >
                     <RiCloseLine />
-                  </button>
+                  </Button>
                 </div>
 
                 <div>
